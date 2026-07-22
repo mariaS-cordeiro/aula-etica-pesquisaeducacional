@@ -88,7 +88,7 @@ div.stDeployButton {
 .teacher-avatar {
     width: 90px;
     height: 90px;
-    border-radius: 50%;
+    border-radius: 20%;
     object-fit: cover;
     border: 3px solid #3b82f6;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
