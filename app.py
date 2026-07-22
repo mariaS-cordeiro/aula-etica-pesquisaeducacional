@@ -4,7 +4,7 @@ import base64
 
 # Page configuration
 st.set_page_config(
-    page_title="Jornada da Ética na Pesquisa",
+    page_title="Jornada de Ética na Pesquisa",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -143,15 +143,15 @@ elif st.session_state.jornada == 1:
     reflection_opt = st.radio(
         "Para você, qual é o núcleo do comportamento ético na pesquisa?",
         [
+            "Selecione uma opção...",
             "Cumprir exigências burocráticas e assinar documentos obrigatórios.",
             "Refletir de maneira crítica e empática sobre o impacto das minhas ações nas pessoas reais da pesquisa.",
             "Focar apenas nos resultados acadêmicos, garantindo a neutralidade total."
         ],
-        index=None,
-        placeholder="Escolha a alternativa que melhor reflete seu ponto de vista atual..."
+        index=0
     )
     
-    if reflection_opt:
+    if reflection_opt and reflection_opt != "Selecione uma opção...":
         if "Refletir" in reflection_opt:
             st.success("Exatamente! A ética exige reflexão crítica, engajamento e empatia cotidiana.")
         else:
@@ -224,33 +224,35 @@ elif st.session_state.jornada == 2:
     q1 = st.radio(
         "1. De acordo com Aristóteles, o que constitui a base da ética?",
         [
+            "Selecione uma opção...",
             "A) Um conjunto de regras estritas e burocráticas definidas por comitês.",
             "B) O caráter de uma pessoa, construído e moldado na relação prática com os outros.",
             "C) A neutralidade absoluta de um cientista isolado de influências sociais."
         ],
-        index=None if st.session_state.quiz_q1 is None else ["A", "B", "C"].index(st.session_state.quiz_q1)
+        index=0 if st.session_state.quiz_q1 is None else ["A", "B", "C"].index(st.session_state.quiz_q1) + 1
     )
     
     q2 = st.radio(
         "2. Para Saviani e Paulo Freire, qual o compromisso ético-político do pesquisador na educação?",
         [
+            "Selecione uma opção...",
             "A) O pesquisador deve ser um agente neutro que apenas observa, sem intervir ou se importar com os sentimentos do educando.",
             "B) A ética na pesquisa restringe-se a obter assinaturas formais, sem compromisso social ou intervenção crítica.",
             "C) A ética exige engajamento social, escuta sensível da realidade educacional e profundo respeito pela dignidade e autonomia do educando."
         ],
-        index=None if st.session_state.quiz_q2 is None else ["A", "B", "C"].index(st.session_state.quiz_q2)
+        index=0 if st.session_state.quiz_q2 is None else ["A", "B", "C"].index(st.session_state.quiz_q2) + 1
     )
     
     # Validate and submit
     if st.button("Verificar Respostas", type="secondary"):
-        if not q1 or not q2:
+        if not q1 or not q2 or q1 == "Selecione uma opção..." or q2 == "Selecione uma opção...":
             st.warning("Por favor, responda a ambas as perguntas para prosseguir.")
         else:
             st.session_state.quiz_q1 = "A" if "A)" in q1 else ("B" if "B)" in q1 else "C")
             st.session_state.quiz_q2 = "A" if "A)" in q2 else ("B" if "B)" in q2 else "C")
             st.session_state.quiz_submitted = True
             st.rerun()
-
+ 
     # Feedback display
     if st.session_state.quiz_submitted:
         correct_q1 = (st.session_state.quiz_q1 == "B")
@@ -387,13 +389,14 @@ elif st.session_state.jornada == 4:
     choice = st.radio(
         "Como a pesquisadora deve agir diante desta situação?",
         [
+            "Selecione uma opção...",
             "Opção A: Registrar e analisar o relato no relatório científico, pois é um dado de alta relevância para compreender a dimensão emocional e a exclusão na vida escolar.",
             "Opção B: Suprimir o trecho delicado da análise pública para proteger o bem-estar emocional da aluna, mantendo o sigilo e evitando exposição inadequada."
         ],
-        index=None if st.session_state.dilema1_choice is None else ["A", "B"].index(st.session_state.dilema1_choice)
+        index=0 if st.session_state.dilema1_choice is None else ["A", "B"].index(st.session_state.dilema1_choice) + 1
     )
     
-    if choice:
+    if choice and choice != "Selecione uma opção...":
         st.session_state.dilema1_choice = "A" if "Opção A" in choice else "B"
         
         if st.session_state.dilema1_choice == "A":
@@ -438,13 +441,14 @@ elif st.session_state.jornada == 5:
     choice = st.radio(
         "Como a equipe de pesquisadores deve proceder em relação a essas postagens?",
         [
+            "Selecione uma opção...",
             "Opção A: É eticamente legítimo analisar e publicar trechos literais dessas mensagens diretamente (sem os nomes), uma vez que elas são publicamente acessíveis na rede.",
             "Opção B: É necessário evitar a publicação direta de trechos literais que permitam reidentificação via buscas web e buscar consentimento informado ampliado, reconhecendo que os alunos escreveram as mensagens em um contexto interpessoal de confiança."
         ],
-        index=None if st.session_state.dilema2_choice is None else ["A", "B"].index(st.session_state.dilema2_choice)
+        index=0 if st.session_state.dilema2_choice is None else ["A", "B"].index(st.session_state.dilema2_choice) + 1
     )
     
-    if choice:
+    if choice and choice != "Selecione uma opção...":
         st.session_state.dilema2_choice = "A" if "Opção A" in choice else "B"
         
         if st.session_state.dilema2_choice == "A":
