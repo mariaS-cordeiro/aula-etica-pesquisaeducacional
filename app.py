@@ -126,11 +126,10 @@ if st.session_state.jornada == 0:
 # ----------------- TELA 1: PERGUNTA FUNDAMENTAL -----------------
 elif st.session_state.jornada == 1:
     render_teacher_speech(
-        "Antes de conversarmos com estudantes, professores(as), gestores(as) ou familiares no campo, "
-        "precisamos refletir sobre uma questão fundamental e norteadora..."
-        <p> O que é ética? </b>
-    )
-    
+    "Antes de conversarmos com estudantes, professores(as), gestores(as) ou familiares no campo, "
+    "precisamos refletir sobre uma questão fundamental e norteadora..."
+    "<br><br><b>O que é ética?</b>"
+)
     st.markdown("""
     <div class="glass-card" style="text-align: center; padding: 40px 20px;">
         <h2 style="color: #1e3a8a; margin-bottom: 20px;">Como agir de forma ética durante uma pesquisa?</h2>
