@@ -85,15 +85,13 @@ div.stDeployButton {
     }
 }
 
-.teacher-avatar-wrapper {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    overflow: hidden;
-    border: 3px solid #3b82f6;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
-    flex-shrink: 0;
+.teacher-avatar { 
+width: 180px; 
+height: 180px; 
+border-radius: 50%; 
+object-fit: cover; 
+border: 3px solid #3b82f6; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2); 
+flex-shrink: 0;
 }
 
 .teacher-avatar {
