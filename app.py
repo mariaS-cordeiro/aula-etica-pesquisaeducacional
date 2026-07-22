@@ -4,7 +4,7 @@ import base64
 
 # Page configuration
 st.set_page_config(
-    page_title="Jornada de Ética na Pesquisa",
+    page_title="Jornada sobre ética na pesquisa",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -107,14 +107,14 @@ if st.session_state.jornada == 0:
     render_teacher_speech(
         "Olá, futuro(a) pesquisador(a)! Bem-vindo(a) à nossa jornada interativa sobre <b>Ética na Pesquisa</b>. "
         "A palavra ética está em toda parte, mas você sabe como ela se aplica quando pesquisamos na área da Educação? "
-        "Vamos começar nossa jornada!"
+        "Vamos começar nossa jornada de conhecimento?!"
     )
     
     st.markdown("""
     <div class="glass-card">
         <div class="gradient-text">Ética e Pesquisa Educacional</div>
         <div class="subtitle-text">
-            <p>Se as discussões sobre ética costumam ser travadas de forma distante, no cotidiano da pesquisa ela é uma prática viva. 
+            <p>Se as discussões sobre ética costumam ser travadas de forma distante, no cotidiano da pesquisa ela é uma prática VIVA! 
             A ética não se resume a uma lista de "pode/não pode" ditada por comitês distantes do dia a dia.</p>
             <p>Mais do que dizer simplesmente "o que fazer", a ética é uma <b>reflexão crítica sobre o que nós fazemos</b> e como nossas investigações afetam as pessoas à nossa volta.</p>
         </div>
@@ -128,13 +128,14 @@ elif st.session_state.jornada == 1:
     render_teacher_speech(
         "Antes de conversarmos com estudantes, professores(as), gestores(as) ou familiares no campo, "
         "precisamos refletir sobre uma questão fundamental e norteadora..."
+        <p> O que é ética? </b>
     )
     
     st.markdown("""
     <div class="glass-card" style="text-align: center; padding: 40px 20px;">
         <h2 style="color: #1e3a8a; margin-bottom: 20px;">Como agir de forma ética durante uma pesquisa?</h2>
         <p style="color: #475569; max-width: 600px; margin: 0 auto 30px auto; font-size: 1.1rem;">
-            Pense sobre isso. A ética nasce da preocupação genuína com a dignidade e a vulnerabilidade das pessoas envolvidas no seu estudo.
+            Pense sobre isso! A ética nasce da preocupação genuína com a dignidade e a vulnerabilidade das pessoas envolvidas no seu estudo.
         </p>
     </div>
     """, unsafe_allow_html=True)
