@@ -1,0 +1,248 @@
+/* Style rules for the Ethics in Research Game */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* Main Body Configuration */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #eef2f6 0%, #dfe7f0 50%, #d4e0ee 100%);
+    background-attachment: fixed;
+    color: #1e293b;
+}
+
+/* Hide standard Streamlit header and footer to make it feel like a standalone app */
+[data-testid="stHeader"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+footer {
+    visibility: hidden;
+}
+div.stDeployButton {
+    display: none;
+}
+
+/* Page Container styling */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 1000px !important;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.glass-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.08);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Title Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.subtitle-text {
+    font-size: 1.15rem;
+    color: #475569;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Teacher Avatar section styles */
+.teacher-speech-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 600px) {
+    .teacher-speech-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.teacher-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    flex-shrink: 0;
+}
+
+.speech-bubble {
+    color: #334155;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.teacher-name {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Philosopher Card Grid */
+.philosopher-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.philosopher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.philosopher-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.philosopher-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.philosopher-quote {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Clickable Interactive Cards for Terms (Jornada 4) */
+.term-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-left: 5px solid #64748b;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.term-card.unvisited:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(4px);
+    border-left-color: #3b82f6;
+}
+
+.term-card.visited {
+    border-left-color: #10b981;
+    background: rgba(240, 253, 244, 0.7);
+}
+
+.term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.term-status-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.term-status-badge.unvisited {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.term-status-badge.visited {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.term-body {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+/* Dilemma Choice Styling */
+.dilemma-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Custom Progress Bar Style */
+.game-progress-bar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 8px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.game-progress-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Custom list layout */
+.lgpd-point {
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    border-left: 3px solid #3b82f6;
+    font-size: 0.95rem;
+}
