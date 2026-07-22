@@ -85,11 +85,11 @@ div.stDeployButton {
     }
 }
 
-.teacher-avatar-wrapper {
+.teacher-avatar {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    overflow: hidden;
+    object-fit: cover;
     border: 3px solid #3b82f6;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
     flex-shrink: 0;
