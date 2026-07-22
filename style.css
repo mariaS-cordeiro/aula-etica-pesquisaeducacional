@@ -90,6 +90,8 @@ div.stDeployButton {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
+     object-position: center;
+    transform: scale(1.35);
     border: 3px solid #3b82f6;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
     flex-shrink: 0;
