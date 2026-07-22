@@ -66,7 +66,7 @@ def render_teacher_speech(text):
     <div class="teacher-speech-container">
         <img src="{img_src}" class="teacher-avatar" alt="Professora">
         <div class="speech-bubble">
-            <div class="teacher-name">Professora Guia</div>
+            <div class="teacher-name">Professora Maria</div>
             <div>{text}</div>
         </div>
     </div>
