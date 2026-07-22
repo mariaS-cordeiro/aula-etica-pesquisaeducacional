@@ -60,7 +60,7 @@ if "dilema2_choice" not in st.session_state:
 # Custom rendering components
 def render_teacher_speech(text):
     avatar_b64 = get_image_base64("avatar_professora.jpg")
-    img_src = f"data:image/jpeg;base64,{avatar_b64}" if avatar_b64 else "https://via.placeholder.com/150"
+    img_src = f"data:image/jpeg;base64,{avatar_b64}" if avatar_b64 else "https://via.placeholder.com/180"
     
     html = f"""
     <div class="teacher-speech-container">
