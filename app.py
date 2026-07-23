@@ -136,9 +136,9 @@ elif st.session_state.jornada == 1:
         O que é ética na pesquisa educacional?
     </h2>
 
-    <h3 style="color: #334155; margin-bottom: 20px;">
+    <h2 style="color: #1e3a8a; margin-bottom: 20px;">
         Como agir de forma ética durante uma pesquisa?
-    </h3>
+    </h2>
 
     <p style="color: #475569; max-width: 600px; margin: 0 auto 30px auto; font-size: 1.1rem;">
         Pense sobre isso! A ética nasce da preocupação genuína com a dignidade e a vulnerabilidade das pessoas envolvidas no seu estudo.
