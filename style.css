@@ -6,7 +6,7 @@ html, body, [data-testid="stAppViewContainer"] {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: linear-gradient(135deg, #eef2f6 0%, #dfe7f0 50%, #d4e0ee 100%);
     background-attachment: fixed;
-    color: #2c3e50;
+    color: #1e293b;
 }
 
 /* Hide standard Streamlit header and footer to make it feel like a standalone app */
